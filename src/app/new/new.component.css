@@ -1,0 +1,14 @@
+.btn-primary{
+    background-color: red;
+}
+.nav-tabs > li > a {
+    padding: 58px 8px;
+    margin:0;
+    margin-right: -4px;
+    font-size: 15px;
+    color: #5f6a6b;
+}
+.active {
+  color: #c33b3b !important;
+  text-decoration: underline;
+}

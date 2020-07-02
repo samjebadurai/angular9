@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" align="center">
+      <h2>My Heroes</h2>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-sm-4">
+      <ul class="heroes">
+        <li *ngFor="let hero of heroes"
+          [class.selected]="hero === selectedHero"
+          (click)="onSelect(hero)">
+          <span class="badge">{{hero.id}}</span> {{hero.name}}
+          <!-- <b>{{hero.age}}</b> -->
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-8">
+        <div *ngIf="selectedHero">
+          <div class="col-12 mb-4">
+          <h3>Marvel's {{selectedHero.name | uppercase}}</h3>
+          </div>
+          <div>
+            <div class="col-6"> ID: {{selectedHero.id}} </div>
+            <div class="col-12 mb-4">Name: {{selectedHero.name}} </div>
+          </div>
+
+          <!-- Show Only Simple Image Starts -->
+          <!-- <div>
+            <img width="200" [src]="selectedHero.img">
+          </div> -->
+          <!-- Show Only Simple Image Ends -->
+
+          <!-- Show Both Front & Back Image Without Condition Starts -->
+          <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <img width="200" [src]="selectedHero.img">
+              </div>
+              <div class="flip-box-back">
+                <img width="200" [src]="selectedHero.img2">
+              </div>
+            </div>
+          </div>
+          <!-- Show Both Front & Back Image Without Condition Ends -->
+
+          <!-- Show Both Front & Back Image With Condition Ends -->
+          <!-- <div [ngClass]="{'flip-box' : selectedHero.name == 'Thanos'}">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <img width="200" [src]="selectedHero.img">
+              </div>
+              <div class="flip-box-back">
+                <img width="200" [src]="selectedHero.img2">
+              </div>
+            </div>
+          </div> -->
+          <!-- Show Both Front & Back Image With Condition Ends -->
+
+          <!--<label>name:
+             <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+          </label>-->
+        </div>
+    </div>
+  </div>
+<div>
